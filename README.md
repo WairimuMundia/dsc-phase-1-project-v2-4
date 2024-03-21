@@ -110,5 +110,5 @@ Merging Datasets
 Merged_df= pd.merge(rv_df, budgets)
 Merged_df.head()
 
-Summary
+**Summary**
 The visualizations presented above provide valuable insights that will guide Microsoft's foray into movie production. With these insights, Microsoft can be confident in their data analysis approach and make informed decisions to ensure success in their movie-production endeavors.
