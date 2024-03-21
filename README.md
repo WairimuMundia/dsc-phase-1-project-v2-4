@@ -6,6 +6,7 @@ Student pace: HYBRID
 Scheduled project review date/time:
 Instructor name: MARYANN MWIKALI
 Blog post URL:
+
 **Project Overview**
 My objective is to conduct exploratory data analysis on the movie dataset, aiming to provide actionable insights and recommendations for Microsoft Corporation. Through a thorough examination of the data, I will identify key trends, patterns, and opportunities within the movie industry. By leveraging exploratory techniques, I aim to offer strategic guidance to Microsoft on potential avenues for entry or expansion in this sector, ultimately informing their decision-making process and maximizing their success in the entertainment market.
 **Project Objectives**
