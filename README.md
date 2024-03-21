@@ -35,9 +35,10 @@ Before diving into data analysis, it's crucial to import essential libraries tha
 #Handling the NaNs or missing values.
 #Verify that all columns have the appropriate data type.
 #Address any placeholders present.
-In the subsequent cells, I will perform data cleaning and ETL for each dataset.
-#Dealing with missing Values
-*The initial step involves determining the percentage of missing values in each column of the bomovies_df dataset.
+****DATA CLEANING
+*In the subsequent cells, I will perform data cleaning and ETL for each dataset.
+**#Dealing with missing Values
+***The initial step involves determining the percentage of missing values in each column of the bomovies_df dataset.
 Based on the findings, it appears that the bomovies_df dataset has a relatively low proportion of missing values across all columns, except for the foreign_gross column, which has a slightly higher percentage.
 Nevertheless, the foreign_gross column exhibits a significantly higher missing value percentage, nearing 40%. I've inferred that these missing values indicate movies that were exclusively distributed domestically and didn't generate revenue from international markets. Hence, I've replaced the missing values in the foreign_gross column with 0.
 I additionally substituted missing values in the domestic_gross column with zero, under the assumption that these movies did not generate sales in the domestic market.
@@ -49,7 +50,8 @@ I have successfully handled the missing values in the bomovies_df dataset.
 Converting columns to their appropriate data types.
 However, I observed that the domestic_gross, foreign_gross, and year columns are in incorrect data types, so I cast them to the appropriate data types.
 Handling missing values in rt_df.
-Dealing with the nulls;
+
+**Dealing with the nulls;**
 In the rt_df dataframe, I identified that only two columns would be relevant for my analysis: genre and rating. I extracted them from the main data frame as follows:
 Subsequently, I addressed the missing values by removing the rows containing null values in the specified columns.
 Addressing missing values by dropping all rows containing null values.
@@ -64,6 +66,7 @@ The following code converts the columns containing dollar signs into integers to
 budgets.info()  # checkig if  we have the correct datatypes
 **Data Analysis**
 After ensuring the data is clean and ready, I proceeded to delve into data analysis. In this section, I aim to derive meaningful insights from the data. I will merge datasets to uncover deeper analyses and craft a compelling narrative that Microsoft would undoubtedly be interested in.
+
 My Data Analysis will focus on Establishing the following:
 Which is the most popular genre of movies
 Which is the most popular studio
@@ -75,6 +78,7 @@ Based on the results above, Drama emerges as the most popular genre of movies, f
 # Ploting  Most popular  Genres and their frequencies
 #Most Popular studio
 I can identify the most popular studio from the bomovies_df dataset.
+
 Most Popular Rating
 Is There a Relationship Bewteen Movie Production Budget and Profits Realised
 To ascertain whether the production budget affects profitability, I calculated the correlation between the production budget and profit realised domestically and worldwide
@@ -82,10 +86,12 @@ C:\Users\user\AppData\Local\Temp\ipykernel_10264\2354375143.py:1: FutureWarning:
  In the correlation matrix provided, it's evident that the correlation between the Production budget and worldwide is positive and stronger compared to that between the Production budget and domestic profit. A scatter plot depicting this relationship is presented below:
 Most Popular Genre_ids
 This insight can be obtained
+
 Popularity By Language
 C:\Users\user\AppData\Local\Temp\ipykernel_10264\1549669306.py:1: FutureWarning: The default value of numeric_only in DataFrameGroupBy.sum is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns that should be valid for the function.
 Merging Datasets
 Merged_df= pd.merge(rv_df, budgets)
 Merged_df.head()
+
 Summary
 The visualizations presented above provide valuable insights that will guide Microsoft's foray into movie production. With these insights, Microsoft can be confident in their data analysis approach and make informed decisions to ensure success in their movie-production endeavors.
