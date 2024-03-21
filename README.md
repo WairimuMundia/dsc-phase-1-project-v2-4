@@ -2,8 +2,11 @@ Final Project Submission
 Please fill out:
 
 Student name: CAROL MUNDIA
+
 Student pace: HYBRID
+
 Scheduled project review date/time:
+
 Instructor name: MARYANN MWIKALI
 Blog post URL:
 
