@@ -35,8 +35,8 @@ Before diving into data analysis, it's crucial to import essential libraries tha
 #I start by establishing a connection to the database and inspecting the available tables.
 
 
-# I proceed to determine the number of entries, columns, and their respective data types.
-#Understanding the dataset's dimensions by determining the number of rows and columns, along with inspecting the data types of each column.
+**# I proceed to determine the number of entries, columns, and their respective data types.
+**#Understanding the dataset's dimensions by determining the number of rows and columns, along with inspecting the data types of each column.
 # reading the data and assigning it to rv_df
 #Displaying the last 3 entries of the dataset.
 
