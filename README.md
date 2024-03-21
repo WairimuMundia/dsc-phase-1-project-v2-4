@@ -1,310 +1,548 @@
-# Phase 1 Project Description
-
-You've made it all the way through the first phase of this course - take a minute to celebrate your awesomeness!
-
-![awesome](https://raw.githubusercontent.com/learn-co-curriculum/dsc-phase-1-project-v2-4/master/awesome.gif)
-
-Now you will put your new skills to use with a large end-of-Phase project!
-
-In this project description, we will cover:
-
-* [***Project Overview:***](#project-overview) the project goal, audience, and dataset
-* [***Deliverables:***](#deliverables) the specific items you are required to produce for this project
-* [***Grading:***](#grading) how your project will be scored
-* [***Getting Started:***](#getting-started) guidance for how to begin your first project
-
-## Project Overview
-
-For this project, you will use exploratory data analysis to generate insights for a business stakeholder.
-
-### Business Problem
-
-Microsoft sees all the big companies creating original video content and they want to get in on the fun. They have decided to create a new movie studio, but they don’t know anything about creating movies. You are charged with exploring what types of films are currently doing the best at the box office. You must then translate those findings into actionable insights that the head of Microsoft's new movie studio can use to help decide what type of films to create.
-
-### The Data
-
-In the folder `zippedData` are movie datasets from:
-
-* [Box Office Mojo](https://www.boxofficemojo.com/)
-* [IMDB](https://www.imdb.com/)
-* [Rotten Tomatoes](https://www.rottentomatoes.com/)
-* [TheMovieDB](https://www.themoviedb.org/)
-* [The Numbers](https://www.the-numbers.com/)
-
-Because it was collected from various locations, the different files have different formats. Some are compressed CSV (comma-separated values) or TSV (tab-separated values) files that can be opened using spreadsheet software or `pd.read_csv`, while the data from IMDB is located in a SQLite database.
-
-![movie data erd](https://raw.githubusercontent.com/learn-co-curriculum/dsc-phase-1-project-v2-4/master/movie_data_erd.jpeg)
-
-Note that the above diagram shows ONLY the IMDB data. You will need to look carefully at the features to figure out how the IMDB data relates to the other provided data files.
-
-It is up to you to decide what data from this to use and how to use it. If you want to make this more challenging, you can scrape websites or make API calls to get additional data. If you are feeling overwhelmed or behind, we recommend you use only the following data files:
-
-* `im.db.zip`
-  * Zipped SQLite database (you will need to unzip then query using SQLite)
-  * `movie_basics` and `movie_ratings` tables are most relevant
-* `bom.movie_gross.csv.gz`
-  * Compressed CSV file (you can open without expanding the file using `pd.read_csv`)
-
-### Key Points
-
-* **Your analysis should yield three concrete business recommendations.** The ultimate purpose of exploratory analysis is not just to learn about the data, but to help an organization perform better. Explicitly relate your findings to business needs by recommending actions that you think the business (Microsoft) should take.
-
-* **Communicating about your work well is extremely important.** Your ability to provide value to an organization - or to land a job there - is directly reliant on your ability to communicate with them about what you have done and why it is valuable. Create a storyline your audience (the head of Microsoft's new movie studio) can follow by walking them through the steps of your process, highlighting the most important points and skipping over the rest.
-
-* **Use plenty of visualizations.** Visualizations are invaluable for exploring your data and making your findings accessible to a non-technical audience. Spotlight visuals in your presentation, but only ones that relate directly to your recommendations. Simple visuals are usually best (e.g. bar charts and line graphs), and don't forget to format them well (e.g. labels, titles).
-
-## Deliverables
-
-There are three deliverables for this project:
-
-* A **non-technical presentation**
-* A **Jupyter Notebook**
-* A **GitHub repository**
-
-### Non-Technical Presentation
-
-The non-technical presentation is a slide deck presenting your analysis to business stakeholders.
-
-* ***Non-technical*** does not mean that you should avoid mentioning the technologies or techniques that you used, it means that you should explain any mentions of these technologies and avoid assuming that your audience is already familiar with them.
-* ***Business stakeholders*** means that the audience for your presentation is Microsoft, not the class or teacher. Do not assume that they are already familiar with the specific business problem, but also do not explain to them what Microsoft is.
-
-The presentation describes the project ***goals, data, methods, and results***. It must include at least ***three visualizations*** which correspond to ***three business recommendations***.
-
-We recommend that you follow this structure, although the slide titles should be specific to your project:
-
-1. Beginning
-    * Overview
-    * Business Understanding
-2. Middle
-    * Data Understanding
-    * Data Analysis
-3. End
-    * Recommendations
-    * Next Steps
-    * Thank You
-       * This slide should include a prompt for questions as well as your contact information (name and LinkedIn profile)
-
-You will give a live presentation of your slides and submit them in PDF format on Canvas. The slides should also be present in the GitHub repository you submit with a file name of `presentation.pdf`.
-
-The graded elements of the presentation are:
-
-* Presentation Content
-* Slide Style
-* Presentation Delivery and Answers to Questions
-
-See the [Grading](#grading) section for further explanation of these elements.
-
-For further reading on creating professional presentations, check out:
-
-* [Presentation Content](https://github.com/learn-co-curriculum/dsc-project-presentation-content)
-* [Slide Style](https://github.com/learn-co-curriculum/dsc-project-slide-design)
-
-### Jupyter Notebook
-
-The Jupyter Notebook is a notebook that uses Python and Markdown to present your analysis to a data science audience.
-
-* ***Python and Markdown*** means that you need to construct an integrated `.ipynb` file with Markdown (headings, paragraphs, links, lists, etc.) and Python code to create a well-organized, skim-able document.
-  * The notebook kernel should be restarted and all cells run before submission, to ensure that all code is runnable in order.
-  * Markdown should be used to frame the project with a clear introduction and conclusion, as well as introducing each of the required elements.
-* ***Data science audience*** means that you can assume basic data science proficiency in the person reading your notebook. This differs from the non-technical presentation.
-
-Along with the presentation, the notebook also describes the project ***goals, data, methods, and results***. It must include at least ***three visualizations*** which correspond to ***three business recommendations***.
-
-You will submit the notebook in PDF format on Canvas as well as in `.ipynb` format in your GitHub repository.
-
-The graded elements for the Jupyter Notebook are:
-
-* Business Understanding
-* Data Understanding
-* Data Preparation
-* Data Analysis
-* Visualization
-* Code Quality
-
-See the [Grading](#grading) section for further explanation of these elements.
-
-### GitHub Repository
-
-The GitHub repository is the cloud-hosted directory containing all of your project files as well as their version history.
-
-This repository link will be the project link that you include on your resume, LinkedIn, etc. for prospective employers to view your work. Note that we typically recommend that 3 links are highlighted (out of 5 projects) so don't stress too much about getting this one to be perfect! There will also be time after graduation for cosmetic touch-ups.
-
-A professional GitHub repository has:
-
-1. `README.md`
-    * A file called `README.md` at the root of the repository directory, written in Markdown; this is what is rendered when someone visits the link to your repository in the browser
-    * This file contains these sections:
-       * Overview
-       * Business Understanding
-          * Include stakeholder and key business questions
-       * Data Understanding and Analysis
-          * Source of data
-          * Description of data
-          * Three visualizations (the same visualizations presented in the slides and notebook)
-       * Conclusion
-          * Summary of conclusions including three relevant findings
-2. Commit history
-   * Progression of updates throughout the project time period, not just immediately before the deadline
-   * Clear commit messages
-   * Commits from all team members (if a group project)
-3. Organization
-   * Clear folder structure
-   * Clear names of files and folders
-   * Easily-located notebook and presentation linked in the README
-4. Notebook(s)
-   * Clearly-indicated final notebook that runs without errors
-   * Exploratory/working notebooks (can contain errors, redundant code, etc.) from all team members (if a group project)
-5. `.gitignore`
-   * A file called `.gitignore` at the root of the repository directory instructs Git to ignore large, unnecessary, or private files
-     * Because it starts with a `.`, you will need to type `ls -a` in the terminal in order to see that it is there
-   * GitHub maintains a [Python .gitignore](https://github.com/github/gitignore/blob/master/Python.gitignore) that may be a useful starting point for your version of this file
-   * To tell Git to ignore more files, just add a new line to `.gitignore` for each new file name
-     * Consider adding `.DS_Store` if you are using a Mac computer, as well as project-specific file names
-     * If you are running into an error message because you forgot to add something to `.gitignore` and it is too large to be pushed to GitHub [this blog post](https://medium.com/analytics-vidhya/tutorial-removing-large-files-from-git-78dbf4cf83a?sk=c3763d466c7f2528008c3777192dfb95)(friend link) should help you address this
-
-You wil submit a link to the GitHub repository on Canvas.
-
-See the [Grading](#grading) section for further explanation of how the GitHub repository will be graded.
-
-For further reading on creating professional notebooks and `README`s, check out [this reading](https://github.com/learn-co-curriculum/dsc-repo-readability-v2-2).
-
-## Grading
-
-***To pass this project, you must pass each project rubric objective.*** The project rubric objectives for Phase 1 are:
-
-1. Attention to Detail
-2. Data Communication
-3. Authoring Jupyter Notebooks
-4. Data Manipulation and Analysis with `pandas`
-
-### Attention to Detail
-
-If you have searched for a job, you have probably seen "attention to detail" appear on a job description. In a [survey of hiring managers](https://www.payscale.com/data-packages/job-skills), fully 56% of them said they felt that recent college grads lacked this skill. So, what does "attention to detail" mean, and how will you be graded on it at Flatiron School?
-
-Attention to detail means that you accomplish tasks thoroughly and accurately. You need to understand what is being asked of you, and double-check that your work fulfills all of the requirements. This will help make you a "no-brainer hire" because it helps employers feel confident that they will not have to double-check your work. For further reading, check out [this article](https://www.indeed.com/career-advice/career-development/attention-to-detail) from Indeed.
-
-***Attention to detail will be graded based on the project checklist. In Phase 1, you need to complete 60% (6 out of 10) or more of the checklist elements in order to pass the Attention to Detail objective.*** The standard for passing the Attention to Detail objective will increase with each Phase, until you are required to complete all elements to pass Phase 5 (Capstone).
-
-The [Phase 1 Project Checklist](https://docs.google.com/document/d/1PjJwdek9EeIy9tYdvlC4bvKvwYcI2xHO1wEMENfqo5E/edit?usp=sharing) is linked here as well as directly in Canvas. The elements highlighted in yellow are the elements you need to complete in order to pass this objective. We recommend that you make your own copy of this document, so that you can check off each element as you complete it. The checklist also contains more specific, detailed guidance about the deliverables described above.
-
-Below are the definitions of each rubric level for this objective. This information is also summarized in the rubric, which is attached to the project submission assignment.
-
-#### Exceeds Objective
-70% or more of the project checklist items are complete
-
-#### Meets Objective (Passing Bar)
-60% of the project checklist items are complete
-
-#### Approaching Objective
-50% of the project checklist items are complete
-
-#### Does Not Meet Objective
-40% or fewer of the project checklist items are complete
-
-### Data Communication
-
-Communication is another key "soft skill". In [the same survey mentioned above](https://www.payscale.com/data-packages/job-skills), 46% of hiring managers said that recent college grads were missing this skill.
-
-Because "communication" can encompass such a wide range of contexts and skills, we will specifically focus our Phase 1 objective on Data Communication. We define Data Communication as:
-
-> Communicating basic data analysis results to diverse audiences via writing and live presentation
-
-To further define some of these terms:
-
-* By "basic data analysis" we mean that you are filtering, sorting, grouping, and/or aggregating the data in order to answer business questions. This project does not involve inferential statistics or machine learning, although descriptive statistics such as measures of central tendency are encouraged.
-* By "results" we mean your ***three visualizations and recommendations***.
-* By "diverse audiences" we mean that your presentation and notebook are appropriately addressing a business and data science audience, respectively.
-
-Below are the definitions of each rubric level for this objective. This information is also summarized in the rubric, which is attached to the project submission assignment.
-
-#### Exceeds Objective
-Creates and describes appropriate visualizations for given business questions, where each visualization fulfills all elements of the checklist
-
-> This "checklist" refers to the Data Visualization checklist within the larger Phase 1 Project Checklist
-
-#### Meets Objective (Passing Bar)
-Creates and describes appropriate visualizations for given business questions
-
-> This objective can be met even if all checklist elements are not fulfilled. For example, if there is some illegible text in one of your visualizations, you can still meet this objective
-
-#### Approaching Objective
-Creates visualizations that are not related to the business questions, or uses an inappropriate type of visualization
-
-> Even if you create very compelling visualizations, you cannot pass this objective if the visualizations are not related to the business questions
-
-> An example of an inappropriate type of visualization would be using a line graph to show the correlation between two independent variables, when a scatter plot would be more appropriate
-
-#### Does Not Meet Objective
-Does not submit the required number of visualizations
-
-### Authoring Jupyter Notebooks
-
-According to [Kaggle's 2020 State of Data Science and Machine Learning Survey](https://www.kaggle.com/kaggle-survey-2020), 74.1% of data scientists use a Jupyter development environment, which is more than twice the percentage of the next-most-popular IDE, Visual Studio Code. Jupyter Notebooks allow for reproducible, skim-able code documents for a data science audience. Comfort and skill with authoring Jupyter Notebooks will prepare you for job interviews, take-home challenges, and on-the-job tasks as a data scientist.
-
-The key feature that distinguishes *authoring Jupyter Notebooks* from simply *writing Python code* is the fact that Markdown cells are integrated into the notebook along with the Python cells in a notebook. You have seen examples of this throughout the curriculum, but now it's time for you to practice this yourself!
-
-Below are the definitions of each rubric level for this objective. This information is also summarized in the rubric, which is attached to the project submission assignment.
-
-#### Exceeds Objective
-Uses Markdown and code comments to create a well-organized, skim-able document that follows all best practices
-
-> Refer to the [repository readability reading](https://github.com/learn-co-curriculum/dsc-repo-readability-v2-2) for more tips on best practices
-
-#### Meets Objective (Passing Bar)
-Uses some Markdown to create an organized notebook, with an introduction at the top and a conclusion at the bottom
-
-#### Approaching Objective
-Uses Markdown cells to organize, but either uses only headers and does not provide any explanations or justifications, or uses only plaintext without any headers to segment out sections of the notebook
-
-> Headers in Markdown are delineated with one or more `#`s at the start of the line. You should have a mixture of headers and plaintext (text where the line does not start with `#`)
-
-#### Does Not Meet Objective
-Does not submit a notebook, or does not use Markdown cells at all to organize the notebook
-
-### Data Manipulation and Analysis with `pandas`
-
-`pandas` is a very popular data manipulation library, with over 2 million downloads on Anaconda (`conda install pandas`) and over 19 million downloads on PyPI (`pip install pandas`) at the time of this writing. In our own internal data, we see that the overwhelming majority of Flatiron School DS grads use `pandas` on the job in some capacity.
-
-Unlike in base Python, where the Zen of Python says "There should be one-- and preferably only one --obvious way to do it", there is often more than one valid way to do something in `pandas`. However there are still more efficient and less efficient ways to use it. Specifically, the best `pandas` code is *performant* and *idiomatic*.
-
-Performant `pandas` code utilizes methods and broadcasting rather than user-defined functions or `for` loops. For example, if you need to strip whitespace from a column containing string data, the best approach would be to use the [`pandas.Series.str.strip` method](https://pandas.pydata.org/docs/reference/api/pandas.Series.str.strip.html) rather than writing your own function or writing a loop. Or if you want to multiply everything in a column by 100, the best approach would be to use broadcasting (e.g. `df["column_name"] * 100`) instead of a function or loop. You can still write your own functions if needed, but only after checking that there isn't a built-in way to do it.
-
-Idiomatic `pandas` code has variable names that are meaningful words or abbreviations in English, that are related to the purpose of the variables. You can still use `df` as the name of your DataFrame if there is only one main DataFrame you are working with, but as soon as you are merging multiple DataFrames or taking a subset of a DataFrame, you should use meaningful names. For example, `df2` would not be an idiomatic name, but `movies_and_reviews` could be.
-
-We also recommend that you rename all DataFrame columns so that their meanings are more understandable, although it is fine to have acronyms. For example, `"col1"` would not be an idiomatic name, but `"USD"` could be.
-
-Below are the definitions of each rubric level for this objective. This information is also summarized in the rubric, which is attached to the project submission assignment.
-
-#### Exceeds Objective
-Uses `pandas` to prepare data and answer business questions in an idiomatic, performant way
-
-#### Meets Objective (Passing Bar)
-Successfully uses `pandas` to prepare data in order to answer business questions
-
-> This includes projects that _occasionally_ use base Python when `pandas` methods would be more appropriate (such as using `enumerate()` on a DataFrame), or occasionally performs operations that do not appear to have any relevance to the business questions
-
-#### Approaching Objective
-Uses `pandas` to prepare data, but makes significant errors
-
-> Examples of significant errors include: the result presented does not actually answer the stated question, the code produces errors, the code _consistently_ uses base Python when `pandas` methods would be more appropriate, or the submitted notebook contains significant quantities of code that is unrelated to the presented analysis (such as copy/pasted code from the curriculum or StackOverflow)
-
-#### Does Not Meet Objective
-Unable to prepare data using `pandas`
-
-> This includes projects that successfully answer the business questions, but do not use `pandas` (e.g. use only base Python, or use some other tool like R, Tableau, or Excel)
-
-## Getting Started
-
-Please start by reviewing the contents of this project description. If you have any questions, please ask your instructor ASAP.
-
-Next, you will need to complete the [***Project Proposal***](#project_proposal) which must be reviewed by your instructor before you can continue with the project.
-
-Then, you will need to create a GitHub repository. There are three options:
-
-1. Look at the [Phase 1 Project Templates and Examples repo](https://github.com/learn-co-curriculum/dsc-project-template) and follow the directions in the MVP branch.
-2. Fork the [Phase 1 Project Repository](https://github.com/learn-co-curriculum/dsc-phase-1-project-v2-4), clone it locally, and work in the `student.ipynb` file. Make sure to also add and commit a PDF of your presentation to your repository with a file name of `presentation.pdf`.
-3. Create a new repository from scratch by going to [github.com/new](https://github.com/new) and copying the data files from one of the above resources into your new repository. This approach will result in the most professional-looking portfolio repository, but can be more complicated to use. So if you are getting stuck with this option, try one of the above options instead.
-
-## Summary
-
-This project will give you a valuable opportunity to develop your data science skills using real-world data. The end-of-phase projects are a critical part of the program because they give you a chance to bring together all the skills you've learned, apply them to realistic projects for a business stakeholder, practice communication skills, and get feedback to help you improve. You've got this!
+Final Project Submission
+Please fill out:
+
+Student name: CAROL MUNDIA
+Student pace: HYBRID
+Scheduled project review date/time:
+Instructor name: MARYANN MWIKALI
+Blog post URL:
+Project Overview
+My task is to use explorative data analysis to analyze the movie dataset and recommend the course of action to be taken by Microsoft corporation
+
+Objectives
+Ascertain the most popular genre of movies
+Establish the most popular publisher
+Ascertain the most popular rating for movies
+Ascertain the relationship between the production budget and the profit realized from the movies
+Business Understanding
+Microsoft sees all the big companies creating original video content and they want to get in on the fun. They have decided to create a new movie studio, but they don’t know anything about creating movies.
+
+Data Understanding
+Before, I start the process of understanding my data, I first import the relevant librares that will enbale me read all my datasets.
+
+These are Pandas,Sqlite and numpy
+
+import pandas as pd
+import sqlite3
+import numpy as np
+import warnings
+The next step is reading and having a feel of the datasets.
+
+I begin with connecting to the database and viewing the tables in the database
+
+im.db
+conn = sqlite3.connect('im.db') # Establishing connection to the database
+data = pd.read_sql_query('SELECT name from sqlite_master where type= "table";',conn) # Viewing the tables in the database
+data
+<style scoped> .dataframe tbody tr th:only-of-type { vertical-align: middle; }
+.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</style>
+name
+bom.movie_gross.csv
+bomovies_df = pd.read_csv("zippedData/bom.movie_gross.csv.gz") # reading the database
+bomovies_df.head(2) # viewing the first two entries
+<style scoped> .dataframe tbody tr th:only-of-type { vertical-align: middle; }
+.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</style>
+title	studio	domestic_gross	foreign_gross	year
+0	Toy Story 3	BV	415000000.0	652000000	2010
+1	Alice in Wonderland (2010)	BV	334200000.0	691300000	2010
+bomovies_df.info() # getting to know the number of entiries and columns and the datatypes of the coulumns
+rt.movie_info.tsv.gz"
+rt_df = pd.read_csv(("zippedData/rt.movie_info.tsv.gz"),delimiter = "\t") # reading the tsv data and assigning it to rt_df.
+rt_df.head(3) #viewing the first three entries
+<style scoped> .dataframe tbody tr th:only-of-type { vertical-align: middle; }
+.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</style>
+id	synopsis	rating	genre	director	writer	theater_date	dvd_date	currency	box_office	runtime	studio
+0	1	This gritty, fast-paced, and innovative police...	R	Action and Adventure|Classics|Drama	William Friedkin	Ernest Tidyman	Oct 9, 1971	Sep 25, 2001	NaN	NaN	104 minutes	NaN
+1	3	New York City, not-too-distant-future: Eric Pa...	R	Drama|Science Fiction and Fantasy	David Cronenberg	David Cronenberg|Don DeLillo	Aug 17, 2012	Jan 1, 2013	$	600,000	108 minutes	Entertainment One
+2	5	Illeana Douglas delivers a superb performance ...	R	Drama|Musical and Performing Arts	Allison Anders	Allison Anders	Sep 13, 1996	Apr 18, 2000	NaN	NaN	116 minutes	NaN
+rt_df.info() #getting to know the number of rows and columns and the datatypes of the coulumns
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1560 entries, 0 to 1559
+Data columns (total 12 columns):
+ #   Column        Non-Null Count  Dtype 
+---  ------        --------------  ----- 
+ 0   id            1560 non-null   int64 
+ 1   synopsis      1498 non-null   object
+ 2   rating        1557 non-null   object
+ 3   genre         1552 non-null   object
+ 4   director      1361 non-null   object
+ 5   writer        1111 non-null   object
+ 6   theater_date  1201 non-null   object
+ 7   dvd_date      1201 non-null   object
+ 8   currency      340 non-null    object
+ 9   box_office    340 non-null    object
+ 10  runtime       1530 non-null   object
+ 11  studio        494 non-null    object
+dtypes: int64(1), object(11)
+memory usage: 146.4+ KB
+rt.reviews.tsv.gz
+# reading the data and assigning it to rv_df
+
+rv_df = pd.read_csv(("zippedData/rt.reviews.tsv.gz"), delimiter = "\t", encoding = "Windows 1252") 
+
+rv_df.tail(3) # viewing the last 3 entries
+<style scoped> .dataframe tbody tr th:only-of-type { vertical-align: middle; }
+.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</style>
+id	review	rating	fresh	critic	top_critic	publisher	date
+54429	2000	NaN	2/5	rotten	Emanuel Levy	0	EmanuelLevy.Com	July 17, 2005
+54430	2000	NaN	2.5/5	rotten	Christopher Null	0	Filmcritic.com	September 7, 2003
+54431	2000	NaN	3/5	fresh	Nicolas Lacroix	0	Showbizz.net	November 12, 2002
+rv_df.info() 
+---------------------------------------------------------------------------
+
+NameError                                 Traceback (most recent call last)
+
+Cell In[11], line 1
+----> 1 rv_df.info()
+
+
+NameError: name 'rv_df' is not defined
+tmdb.movies.csv.gz
+tmbd_df = pd.read_csv("zippedData/tmdb.movies.csv.gz") # Reading the tmdb data
+
+tmbd_df.head(2) # viewing the first two entries
+<style scoped> .dataframe tbody tr th:only-of-type { vertical-align: middle; }
+.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</style>
+Unnamed: 0	genre_ids	id	original_language	original_title	popularity	release_date	title	vote_average	vote_count
+0	0	[12, 14, 10751]	12444	en	Harry Potter and the Deathly Hallows: Part 1	33.533	2010-11-19	Harry Potter and the Deathly Hallows: Part 1	7.7	10788
+1	1	[14, 12, 16, 10751]	10191	en	How to Train Your Dragon	28.734	2010-03-26	How to Train Your Dragon	7.7	7610
+tmbd_df.info()
+tn.movie_budgets.csv.gz
+budgets= pd.read_csv("zippedData/tn.movie_budgets.csv.gz") 
+budgets.head(2)
+<style scoped> .dataframe tbody tr th:only-of-type { vertical-align: middle; }
+.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</style>
+id	release_date	movie	production_budget	domestic_gross	worldwide_gross
+0	1	Dec 18, 2009	Avatar	$425,000,000	$760,507,625	$2,776,345,279
+1	2	May 20, 2011	Pirates of the Caribbean: On Stranger Tides	$410,600,000	$241,063,875	$1,045,663,875
+budgets.info()
+Data Preparation
+After having a brief overview of the dataset, I started the data prepaation process which invloved cleaning of the data with he following objectives:
+
+Deal with the NaNs/ or missing data
+Ensure that all columns are in the correct datatype
+Deal with placeholders if any
+In the cells taht follow i will conduct data cleaning and ETL for each of the dataset.
+
+bomovies_df
+Dealing with missing Values
+The first step is to find the proportion of missing values in each of the columns of the bomovies_df
+
+bomovies_df.isnull().mean()*100
+title              0.000000
+studio             0.147623
+domestic_gross     0.826690
+foreign_gross     39.858282
+year               0.000000
+dtype: float64
+From the results above, it seems that in the bomovies_df the proportion of missing values for all the columns except the foreign_gross is quite low at less than 1%.
+
+However for foreign gross, the missing value percentage is almost 40%. I assumed that the missing values in foreign_gross means that the movies were sold domestically and did not reach the international market hence their revenue from the international market is 0. Therefore, I replace the missing values in the foreign_gross column by 0.
+
+I also replaced missing values in domestic_gross column with zero since i assummed that these movies did not sell in the domestic market
+
+The codes below replaces the Nans with 0 in the columns domestic_gross and foreign_gross respectively.
+
+bomovies_df["domestic_gross"].fillna(0, inplace= True) # replaces all NANs in the domestic_gross columns with 0
+bomovies_df["foreign_gross"].fillna(0, inplace= True) # replaces all NANs in the foreign_gross columns with 0
+bomovies_df.isna().mean() # Check if the Nulls have disappeared.
+title             0.000000
+studio            0.001476
+domestic_gross    0.000000
+foreign_gross     0.000000
+year              0.000000
+dtype: float64
+For the studio column I replaced the missing values with the mode, which is the most occuring studio.
+
+To find the most occuring studio I used the following code:
+
+bomovies_df["studio"].value_counts().nlargest(1) # Checking for the most common studio
+IFC    166
+Name: studio, dtype: int64
+Since IFC is the most common studio, i replaced the missing values in the studio column with it
+
+bomovies_df["studio"].fillna("IFC",inplace=True) # replacing missing values in studio column with IFC.
+bomovies_df.isna().mean() # checking if the nulls have disappeared
+title             0.0
+studio            0.0
+domestic_gross    0.0
+foreign_gross     0.0
+year              0.0
+dtype: float64
+I have now dealt with the missing values in the bomovies_df succesfully.
+
+Converting to the appropriate column datatypes
+However, i I realized domestic-gross and foreign gross and year are in the wrong datatype and therefore i cast them to the correct datatype
+
+bomovies_df = bomovies_df = bomovies_df.astype({"domestic_gross": int})
+bomovies_df.info() # checking column dataypes have converted succesfull
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 3387 entries, 0 to 3386
+Data columns (total 5 columns):
+ #   Column          Non-Null Count  Dtype 
+---  ------          --------------  ----- 
+ 0   title           3387 non-null   object
+ 1   studio          3387 non-null   object
+ 2   domestic_gross  3387 non-null   int32 
+ 3   foreign_gross   3387 non-null   object
+ 4   year            3387 non-null   int64 
+dtypes: int32(1), int64(1), object(3)
+memory usage: 119.2+ KB
+rt_df
+Dealing with missing values in rt_df
+rt_df.isna().mean()*100 # First find the proportion of missing  values in rt_df
+id               0.000000
+synopsis         3.974359
+rating           0.192308
+genre            0.512821
+director        12.756410
+writer          28.782051
+theater_date    23.012821
+dvd_date        23.012821
+currency        78.205128
+box_office      78.205128
+runtime          1.923077
+studio          68.333333
+dtype: float64
+Dealing with the nulls;
+In the dataframe rt_df, i realized that only to columns would be important for my analysis. These are the genre and rating columns. I sliced them from the main datframe as follows:
+
+rt_df = rt_df[["genre", "rating"]]
+rt_df.head(2)
+<style scoped> .dataframe tbody tr th:only-of-type { vertical-align: middle; }
+.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</style>
+genre	rating
+0	Action and Adventure|Classics|Drama	R
+1	Drama|Science Fiction and Fantasy	R
+I then dealt with the missing values by droppping the rows that had missing values in the column
+
+rt_df = rt_df.dropna()
+rt_df.isna().mean()*100
+genre     0.0
+rating    0.0
+dtype: float64
+rv_df
+Deal with the missing values by dropping all null vlaues in the rows
+rv_df.dropna(inplace =True) # dropping rows with missing values
+rv_df.isnull().mean()*100 # checking if the nulls have disappeared.
+id            0.0
+review        0.0
+rating        0.0
+fresh         0.0
+critic        0.0
+top_critic    0.0
+publisher     0.0
+date          0.0
+dtype: float64
+The ratings column in the rt_reviews (rv_df) can be split into two columns so that we can be able to standardize ratings of all the enries throough feature engineering. The next cell splits the rating column ito two and displays them as separate columns
+
+new = rv_df["rating"].str.split(pat ="/", n = 1, expand=True) # splitting the ratin
+rv_df["score"] = new[0]
+rv_df["outof"] = new[1]
+rv_df.drop(columns = ["rating"], inplace = True)
+rv_df
+<style scoped> .dataframe tbody tr th:only-of-type { vertical-align: middle; }
+.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</style>
+id	review	fresh	critic	top_critic	publisher	date	score	outof
+0	3	A distinctly gallows take on contemporary fina...	fresh	PJ Nabarro	0	Patrick Nabarro	November 10, 2018	3	5
+6	3	Quickly grows repetitive and tiresome, meander...	rotten	Eric D. Snider	0	EricDSnider.com	July 17, 2013	C	None
+7	3	Cronenberg is not a director to be daunted by ...	rotten	Matt Kelemen	0	Las Vegas CityLife	April 21, 2013	2	5
+11	3	While not one of Cronenberg's stronger films, ...	fresh	Emanuel Levy	0	EmanuelLevy.Com	February 3, 2013	B-	None
+12	3	Robert Pattinson works mighty hard to make Cos...	rotten	Christian Toto	0	Big Hollywood	January 15, 2013	2	4
+...	...	...	...	...	...	...	...	...	...
+54419	2000	Sleek, shallow, but frequently amusing.	fresh	Gene Seymour	1	Newsday	September 27, 2002	2.5	4
+54420	2000	The spaniel-eyed Jean Reno infuses Hubert with...	fresh	Megan Turner	1	New York Post	September 27, 2002	3	4
+54421	2000	Manages to be somewhat well-acted, not badly a...	rotten	Bob Strauss	0	Los Angeles Daily News	September 27, 2002	1.5	4
+54422	2000	Arguably the best script that Besson has writt...	fresh	Wade Major	0	Boxoffice Magazine	September 27, 2002	3.5	5
+54424	2000	Dawdles and drags when it should pop; it doesn...	rotten	Manohla Dargis	1	Los Angeles Times	September 26, 2002	1.5	5
+33988 rows × 9 columns
+
+    
+Before I standardize the ratings, i willl first convert the column types from string to integer to allow for mathematical computation.
+
+tmbd_df
+Check fo missing values
+tmbd_df.isna().mean()*100
+Unnamed: 0           0.0
+genre_ids            0.0
+id                   0.0
+original_language    0.0
+original_title       0.0
+popularity           0.0
+release_date         0.0
+title                0.0
+vote_average         0.0
+vote_count           0.0
+dtype: float64
+Perfect! This data has no any missing value.
+
+tmbd_df["genre_ids"].value_counts() # check for  unique values of Genre_ids
+[99]                       3700
+[]                         2479
+[18]                       2268
+[35]                       1660
+[27]                       1145
+                           ... 
+[37, 12]                      1
+[10752, 878]                  1
+[28, 53, 10749, 18, 35]       1
+[99, 80, 53, 36]              1
+[10751, 12, 28]               1
+Name: genre_ids, Length: 2477, dtype: int64
+budgets_df
+Check for missing values
+
+budgets.isna().mean()*100  #checks for percentage of missing values. 
+The budgets_df is also complete!
+
+Since the domestic_gross,Production_budget and Worldwide_gross columns are strings, we needto convet them to inerger to faciltate feature engineering to make the data more insightful.
+
+#The codes below convert  the columns with the $ sign into interger to facilitate feature engineering 
+
+budgets['domestic_gross'] = budgets['domestic_gross'].apply(lambda x: int(''.join(filter(str.isdigit, x))))
+budgets['production_budget'] = budgets['production_budget'].apply(lambda x: int(''.join(filter(str.isdigit, x))))
+budgets["worldwide_gross"] = budgets['worldwide_gross'].apply(lambda x: int(''.join(filter(str.isdigit, x))))
+Perfect! since we have our budget and gross columns as intergers, it is possibe to create new profit columns. Pofit is the difference between productioin cost and gross revenue
+
+budgets["Domestic_profit"] = budgets["domestic_gross"]- budgets["production_budget"]  # creates a new column Domestic_profit
+budgets["worldwide_profit"] = budgets["worldwide_gross"]-budgets["production_budget"]
+budgets.info()  # checkig if  we have the correct datatypes
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 5782 entries, 0 to 5781
+Data columns (total 8 columns):
+ #   Column             Non-Null Count  Dtype 
+---  ------             --------------  ----- 
+ 0   id                 5782 non-null   int64 
+ 1   release_date       5782 non-null   object
+ 2   movie              5782 non-null   object
+ 3   production_budget  5782 non-null   int64 
+ 4   domestic_gross     5782 non-null   int64 
+ 5   worldwide_gross    5782 non-null   int64 
+ 6   Domestic_profit    5782 non-null   int64 
+ 7   worldwide_profit   5782 non-null   int64 
+dtypes: int64(6), object(2)
+memory usage: 361.5+ KB
+Data Analysis
+After prepaing the data and making sure that it is not dirty, I delved into data analysis. In thi section i will try to make sense of the data. I will ty to merge datasets to come up with more insightful analysis and to create a story that microsoft would definitely buy in.
+
+My Data Analysis will focus on Establishing the following:
+
+Which is the most popular genre of movies
+Which is the most popular studio
+Which rating is most prefered
+wh
+Most popular Genre of Movies
+From the rt_ movies dataset I can establish the top 5 genres of movies
+
+rt_df.genre.value_counts().nlargest(5)
+Drama                                151
+Comedy                               110
+Comedy|Drama                          80
+Drama|Mystery and Suspense            67
+Art House and International|Drama     62
+Name: genre, dtype: int64
+From the above code, the most popular genre of movies is Drama, followed by Comedy, then comedy|Drama and so on... This can be better presetnteed in the visualization below:
+
+import matplotlib.pyplot as plt # Importing the library neccesaty to create visualizations
+%matplotlib inline
+import seaborn as sns
+# Getting the X and Y  values 
+x = rt_df["genre"].value_counts().head().index.tolist()
+y = list(rt_df["genre"].value_counts().nlargest(5))   
+# Ploting  Most popular  Genres and their frequencies
+fig,ax = plt.subplots(figsize = (10,5))
+plt.bar(x, y, color = "Purple", width = 0.5)
+plt.xticks(rotation = 10);
+plt.title(" Five Most Popular Movie Genres", fontsize = 20, fontweight = "bold");
+png
+
+Most Popular studio
+I can be able to find the most popular studio from the bomovies _df
+
+rt_df["rating"].value_counts()
+These can be visually presented as:
+
+rating= rt_df["rating"].value_counts().head().index.tolist()
+frequency=list(rt_df["rating"].value_counts().nlargest(5))
+fig, ax = plt.subplots(figsize= (10,6))
+                       
+plt.bar(rating, frequency, color = "green", width =0.5);
+
+plt.title("Most Popular Rating", fontsize = 14, fontweight = "bold");
+png
+
+Most Popular Rating
+Is There a Relationship Bewteen Movie Prodcuction Budget and Profits Realised
+Inorder to ascertain whether production budget affects profitability, I calculated correlation betweem production budget and profit realised domestically and worldwide
+
+budgets.corr()
+C:\Users\user\AppData\Local\Temp\ipykernel_10264\2354375143.py:1: FutureWarning: The default value of numeric_only in DataFrame.corr is deprecated. In a future version, it will default to False. Select only valid columns or specify the value of numeric_only to silence this warning.
+  budgets.corr()
+<style scoped> .dataframe tbody tr th:only-of-type { vertical-align: middle; }
+.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</style>
+id	production_budget	domestic_gross	worldwide_gross	Domestic_profit	worldwide_profit
+id	1.000000	-0.035278	0.008255	-0.009422	0.040832	-0.001172
+production_budget	-0.035278	1.000000	0.685682	0.748306	0.099742	0.608752
+domestic_gross	0.008255	0.685682	1.000000	0.938853	0.792663	0.926605
+worldwide_gross	-0.009422	0.748306	0.938853	1.000000	0.656626	0.981811
+Domestic_profit	0.040832	0.099742	0.792663	0.656626	1.000000	0.756767
+worldwide_profit	-0.001172	0.608752	0.926605	0.981811	0.756767	1.000000
+In the correlation matrix above, The correlation between Production budget and worldwide_profit is positive and higgher than that between prodcution budget and domestic profit. Below is scatter plot showing the relationsip
+
+sns.set_style("darkgrid")
+fig, axes = plt.subplots(1,2,figsize= (15,5))
+sns.scatterplot(x= budgets["production_budget"], y =budgets["Domestic_profit"], data = budgets, ax= axes[0])
+sns.scatterplot(x= budgets["production_budget"], y =budgets["worldwide_profit"], data = budgets, ax= axes[1]);
+png
+
+sns.set_style("darkgrid")
+fig, axes = plt.subplots(1,2,figsize= (15,5))
+sns.scatterplot(x= budgets["production_budget"], y =budgets["domestic_gross"], data = budgets, ax= axes[0])
+sns.scatterplot(x= budgets["production_budget"], y =budgets["worldwide_gross"], data = budgets, ax= axes[1]);
+Most Popular Genre_ids
+This insight can be obtained
+
+grouped1= tmbd_df.groupby(["genre_ids"]).max().sort_values(by="popularity", ascending= False)
+grouped1.head()
+<style scoped> .dataframe tbody tr th:only-of-type { vertical-align: middle; }
+.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</style>
+Unnamed: 0	id	original_language	original_title	popularity	release_date	title	vote_average	vote_count
+genre_ids									
+[12, 28, 14]	24034	522417	zh	奇门遁甲	80.773	2018-10-23	The Thousand Faces of Dunjia	8.3	13948
+[28, 53]	26399	569869	th	우는 남자	78.123	2018-12-20	Your Move	7.4	10081
+[28, 12, 16, 878, 35]	23812	324857	en	Spider-Man: Into the Spider-Verse	60.534	2018-12-14	Spider-Man: Into the Spider-Verse	8.4	4048
+[28, 12, 14]	24318	525135	zh	西游记之孙悟空三打白骨精	53.783	2018-12-21	Warcraft	7.3	11991
+[878, 28, 12]	24924	521323	en	Wastelander	50.289	2018-02-02	Wastelander	8.0	19673
+Popularity By Language
+grouped = tmbd_df.groupby(["original_language"]).sum().sort_values(by="popularity", ascending= False)
+grouped.head()
+C:\Users\user\AppData\Local\Temp\ipykernel_10264\1549669306.py:1: FutureWarning: The default value of numeric_only in DataFrameGroupBy.sum is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
+  grouped = tmbd_df.groupby(["original_language"]).sum().sort_values(by="popularity", ascending= False)
+<style scoped> .dataframe tbody tr th:only-of-type { vertical-align: middle; }
+.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</style>
+Unnamed: 0	id	popularity	vote_average	vote_count
+original_language					
+en	312028215	7005029780	71895.155	138662.0	4874990
+fr	5744495	118048030	2155.574	3130.8	75337
+ja	3769256	70813222	1513.434	1809.1	54774
+es	6070196	127264882	1257.725	2874.3	29396
+ru	2859417	64494601	708.220	1579.4	4901
+language =  ["en","fr","ja","es", "ru"]
+Popularity= [71896,2155,1513,1257,708]
+grouped["popularity"].head()
+original_language
+en    71895.155
+fr     2155.574
+ja     1513.434
+es     1257.725
+ru      708.220
+Name: popularity, dtype: float64
+fig,ax = plt.subplots()
+plt.pie(Popularity, labels = language)
+plt.title("Most Prefered Languages");
+png
+
+Merging Datasets
+Merged_df= pd.merge(rv_df, budgets)
+Merged_df.head()
+<style scoped> .dataframe tbody tr th:only-of-type { vertical-align: middle; }
+.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</style>
+id	review	fresh	critic	top_critic	publisher	date	score	outof	release_date	movie	production_budget	domestic_gross	worldwide_gross	Domestic_profit	worldwide_profit
+0	3	A distinctly gallows take on contemporary fina...	fresh	PJ Nabarro	0	Patrick Nabarro	November 10, 2018	3	5	Jun 7, 2019	Dark Phoenix	350000000	42762350	149762350	-307237650	-200237650
+1	3	A distinctly gallows take on contemporary fina...	fresh	PJ Nabarro	0	Patrick Nabarro	November 10, 2018	3	5	Nov 21, 2018	Ralph Breaks The Internet	175000000	201091711	524283695	26091711	349283695
+2	3	A distinctly gallows take on contemporary fina...	fresh	PJ Nabarro	0	Patrick Nabarro	November 10, 2018	3	5	Apr 8, 2005	Sahara	145000000	68671925	121671925	-76328075	-23328075
+3	3	A distinctly gallows take on contemporary fina...	fresh	PJ Nabarro	0	Patrick Nabarro	November 10, 2018	3	5	Oct 5, 2018	Venom	116000000	213511408	853628605	97511408	737628605
+4	3	A distinctly gallows take on contemporary fina...	fresh	PJ Nabarro	0	Patrick Nabarro	November 10, 2018	3	5	Feb 18, 2005	Son of the Mask	100000000	17018422	59918422	-82981578	-40081578
+publisher= Merged_df["publisher"].value_counts().head().index.tolist()
+frequncy=list(Merged_df["publisher"].value_counts().nlargest(5))
+sns.barplot(x=publisher, y = frequncy, data = Merged_df, palette='OrRd')
+plt.xticks(rotation = 30);
+plt.title("TOP PUBLISHERS");
+png
+
+Summary
+The Visualizations above inform how microsoft will begin their movie-Production journey. With the insights we can be sure that Microsoft wil get it right in data analy
