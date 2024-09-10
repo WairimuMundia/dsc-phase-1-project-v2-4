@@ -1,21 +1,13 @@
 **Project Overview**
-
 I aim to conduct exploratory data analysis on the movie dataset, aiming to provide actionable insights and recommendations for Microsoft Corporation. I will thoroughly examine the data to identify key trends, patterns, and opportunities within the movie industry. By leveraging exploratory techniques, I aim to offer strategic guidance to Microsoft on potential avenues for entry or expansion in this sector, ultimately informing their decision-making process and maximizing their success in the entertainment market.
-
-
 **Project Objectives**
-
 My main objectives are;
 1. Find out which movie genres are the most popular.
 2. Discover which movie publishers are the most popular.
 3. Figure out which movie ratings are the most common.
 4. Explore how production budgets relate to movie profits.
-
-5. 
 **Business Understanding**
 Microsoft has observed the success of major companies venturing into original video content creation and is eager to join the trend. Recognizing the potential in this arena, they have made the strategic decision to establish a new movie studio. Despite their expertise in other areas, Microsoft acknowledges their lack of experience in the movie industry. Therefore, they are seeking to gain insights and expertise to ensure the success of their venture into movie production.
-
-
 **Data Understanding**
 Before diving into data analysis, it's crucial to import essential libraries that streamline the process of reading and manipulating datasets. 
 
